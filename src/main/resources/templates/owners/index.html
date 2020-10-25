@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Owners Page</title>
+</head>
+<body>
+<h2>Owners...</h2>
+
+<button onclick="location.href='/owners/create'" type="button">Create owner</button>
+
+<div th:each="owner : ${owners}">
+    <h3 th:text="${owner.firstName}"></h3>
+    <form method="POST" th:action="@{/owners/delete}">
+        <input type="hidden" name="id" th:value="${owner.id}" />
+        <input type="submit" value="Delete">
+    </form>
+    <form method="GET" th:action="@{/owners/edit}">
+        <input type="hidden" name="id" th:value="${owner.id}"/>
+        <input type="submit" value="Edit">
+    </form>
+</div>
+</body>
+</html>

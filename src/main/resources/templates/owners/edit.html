@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit owner</title>
+</head>
+<body>
+    <h1>Edit firstname on owner</h1>
+    <form action="/owners/edit" method="post">
+        <input type="hidden" id="id" name="id" th:value="${id}"><br>
+        <label for="firstName">New first name:</label><br>
+        <input type="text" id="firstName" name="firstName"><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
